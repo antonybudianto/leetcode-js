@@ -44,12 +44,12 @@ var calc = function(a, b) {
   let n = arr.length;
   x = arr;
   y = arr2;
-  let pre = Math.abs(y.length - n);
+  let pre = Math.abs(ylen - n);
 
   let r = [];
   let tmp = 0;
   for (let i = n - 1; i >= 0; i--) {
-    let op1 = x[i] || 0;
+    let op1 = x[i];
     let op2 = y[i - pre] || 0;
     let opr = parseInt(op1) + parseInt(op2) + tmp;
     tmp = 0;
