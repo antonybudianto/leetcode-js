@@ -30,25 +30,27 @@ var str2ll = function(str) {
 var calc = function(a, b) {
   let x = a.split('');
   let y = b.split('');
-  let arr = x.length > y.length ? x : y;
-  let arr2 = x.length < y.length ? x : y;
-  if (x.length === y.length) {
+  let xlen = x.length;
+  let ylen = y.length;
+  let arr;
+  let arr2;
+  if (xlen === ylen) {
     arr = x;
     arr2 = y;
+  } else {
+    arr = xlen > ylen ? x : y;
+    arr2 = xlen < ylen ? x : y;
   }
   let n = arr.length;
-  let diff = arr.length - arr2.length;
-  for (let i = 0; i < diff; i++) {
-    arr2.unshift(0);
-  }
   x = arr;
   y = arr2;
+  let pre = Math.abs(y.length - n);
 
   let r = [];
   let tmp = 0;
   for (let i = n - 1; i >= 0; i--) {
     let op1 = x[i] || 0;
-    let op2 = y[i] || 0;
+    let op2 = y[i - pre] || 0;
     let opr = parseInt(op1) + parseInt(op2) + tmp;
     tmp = 0;
     if (opr > 9) {
@@ -71,10 +73,12 @@ var addTwoNumbers = function(l1, l2) {
   let a = parseInt(atxt);
   let b = parseInt(btxt);
   let sum = a + b;
-  let str = sum.toString();
+  let str;
   if (sum > Number.MAX_SAFE_INTEGER) {
     let res = calc(atxt, btxt);
     str = res;
+  } else {
+    str = sum.toString();
   }
   let c = str
     .split('')
