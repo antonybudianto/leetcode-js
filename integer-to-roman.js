@@ -36,8 +36,7 @@ var intToRoman = function(num) {
 
       let div = Math.floor(n / val)
 
-      let times = div
-      for (let j = 0; j < times; j++) {
+      for (let j = 0; j < div; j++) {
         res += MAP_SYM[i]
       }
       n %= val
