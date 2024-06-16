@@ -7,7 +7,6 @@ var searchInsert = function (nums, target) {
   let c = 0;
   const N = nums.length;
   for (let i = 0; i < N; i++) {
-    console.log(i, target, nums[i]);
     if (target === nums[i]) {
       return i;
     } else if (nums[i] > target) {
