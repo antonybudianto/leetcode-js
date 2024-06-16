@@ -5,7 +5,6 @@
 var plusOne = function (digits) {
   const N = digits.length;
   const calc = () => {
-    let result = 0;
     let r = 1; // initially, add +1
     for (let i = N - 1; i >= 0; i--) {
       let add = digits[i] + r;
