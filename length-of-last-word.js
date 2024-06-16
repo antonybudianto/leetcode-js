@@ -2,7 +2,8 @@
  * @param {string} s
  * @return {number}
  */
-const lengthOfLastWord = function (s) {
+var lengthOfLastWord = function (s) {
+  let c = 0;
   let x = -1;
   let N = s.length;
   let y = -1;
@@ -19,8 +20,5 @@ const lengthOfLastWord = function (s) {
     }
   }
 
-  if (x >= 0 && y >= 0) {
-    return y - x + 1;
-  }
-  return y - x;
+  return y - x + 1;
 };
