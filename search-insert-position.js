@@ -16,9 +16,7 @@ var searchInsert = function (nums, target) {
   }
   if (c === 0) {
     if (target > nums[N - 1]) return N;
-    else {
-      return 0;
-    }
+    return 0;
   }
   return c;
 };
