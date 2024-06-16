@@ -3,7 +3,6 @@
  * @return {number}
  */
 var lengthOfLastWord = function (s) {
-  let c = 0;
   let x = -1;
   let N = s.length;
   let y = -1;
